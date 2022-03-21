@@ -19,10 +19,10 @@ def  can_move(board, board_size, row, col):
 
 def solve (board, board_size, row, col, counter):
 
-    if counter >= (board_size*board_size)+1:
+    if counter >= (board_size*board_size) - 1:
         return True
 
-    if not can_move(board, board_size, row, col):
+    if can_move(board, board_size, row, col):
         return False
 
     board[row][col] = counter
@@ -94,7 +94,7 @@ def make_board(board_size):
         for n in range(0,board_size):
             new_row.append(0)
         new_board.append(new_row)
-    # new_board[0][0] = 1
+    new_board[0][0] = 1
     return new_board
 
 
