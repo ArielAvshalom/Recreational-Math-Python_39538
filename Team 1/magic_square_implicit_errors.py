@@ -1,3 +1,4 @@
+#Savana Hughes Magic Square 
 def print_grid(ms):
     for row in ms:
         for col in row:
