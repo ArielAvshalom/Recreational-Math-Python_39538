@@ -2,7 +2,7 @@
 def Eretheosenses(n: int):
     primes = []
     check = [True] * n
-    check[0] = check[1] = False
+    check[0] = False
 
     for i in range(2, n):
         if check[i]:

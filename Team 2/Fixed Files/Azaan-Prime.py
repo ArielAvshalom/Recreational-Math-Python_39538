@@ -1,5 +1,15 @@
 # Azaan Ali -- Segmented Sieve of Eretheosenses
 def Eretheosenses(n: int):
+    """
+    This function returns an array of all primes from 2 to n.
+    Prints all primes in that range.
+
+    param: int
+         Integer to calculate primes up to that value
+
+    return: array
+         Returns an array of all primes up to n
+    """
     primes = []
     check = [True] * n
     check[0] = check[1] = False
@@ -17,6 +27,15 @@ def Eretheosenses(n: int):
 
 
 def Segment(n):
+    """
+    Creates an array of primes from 2 to sqrt(n), then calculates the 
+    remaining range in segments of sqrt(n) up to n. Calculates the remanining primes by removing the multiples of 
+    each primes from the list and printing the primes.
+
+    param: int
+        Integer to calculate primes up to that value
+
+    """
     segment = int((n ** 0.5 + 1) // 1)
     primes = Eretheosenses(segment)
     lowerLimit = segment
