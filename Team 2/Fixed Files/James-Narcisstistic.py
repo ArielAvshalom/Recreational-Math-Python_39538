@@ -5,10 +5,10 @@ Find the implicit errors
 """
 
 """
-This is a function to print all anrcisstic number until the nth narcisstic number. 
+This is a function to print all narcisstic number until the nth non-negative integer narcisstic number. 
 A brute force method
 
-param: int
+param: int (non-negative)
         expects the nth narcisttic number that the user wants to look for
 return: None
 """
@@ -28,7 +28,7 @@ def narc(nth_number):
 """
 This is a function to check if the number is a narcisstic number
 
-param: expects an integer
+param: expects an integer (non-negative)
 return: returns true if the number is narcisstic 
         returns false if the number is not narcisstic
 """
@@ -48,7 +48,7 @@ def is_narc(number):
 """
 This is a function to print out narcisstic numbers until a specified number
 
-param: expects an integer
+param: expects a non negative integer
 return: returns an array of narcisstic numbers
 """
 def until_narc(number):
