@@ -8,7 +8,7 @@ once you get to board size 8 it can take really long to get the solution to prin
 
 so focus on sizes 5 - 7 inclusive
 """
-import time
+
 def can_move(board, board_size, row, col):
     if row < board_size and row >= 0 and col < board_size and col >= 0 and board[row][col] == 0:
         return True
@@ -82,8 +82,5 @@ def print_board(board):
 b_size = input("Input the size of the board: ")
 b_size = int(b_size)
 chess_board = make_board(b_size)
-start = time.time()
 solve(chess_board, b_size, 0, 0, 1)
-end = time.time()
-print(end - start)
 print_board(chess_board)
