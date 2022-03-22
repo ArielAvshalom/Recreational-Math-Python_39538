@@ -25,42 +25,50 @@ def solve(board, board_size, row, col, counter):
     next_row = row + 2
     next_col = col + 1
     if solve(board, board_size, next_row, next_col, counter + 1):
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     next_row = row + 2
     next_col = col - 1
     if solve(board, board_size, next_row, next_col, counter + 1): 
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     next_row = row - 2
     next_col = col + 1
     if solve(board, board_size, next_row, next_col, counter + 1): 
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     next_row = row - 2
     next_col = col - 1
     if solve(board, board_size, next_row, next_col, counter + 1):
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     next_row = row + 1
     next_col = col + 2
     if solve(board, board_size, next_row, next_col, counter + 1): 
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     next_row = row + 1
     next_col = col - 2
     if solve(board, board_size, next_row, next_col, counter + 1):
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     next_row = row - 1
     next_col = col + 2
     if solve(board, board_size, next_row, next_col, counter + 1):
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     next_row = row - 1
     next_col = col - 2
     if solve(board, board_size, next_row, next_col, counter + 1):
-        board[next_row][next_col] = counter
+        board[row][col] = counter
+        return True
 
     return False
 
