@@ -9,83 +9,60 @@ once you get to board size 8 it can take really long to get the solution to prin
 so focus on sizes 5 - 7 inclusive
 """
 
-
-
-def  can_move(board, board_size, row, col):
+def can_move(board, board_size, row, col):
     if row < board_size and row >= 0 and col < board_size and col >= 0 and board[row][col] == 0:
         return True
     return False
 
+def solve(board, board_size, row, col, counter):
 
-def solve (board, board_size, row, col, counter):
-
-    if counter >= (board_size*board_size)+1:
+    if counter >= (board_size*board_size) - 1:
         return True
 
     if not can_move(board, board_size, row, col):
         return False
 
-    board[row][col] = counter
-
     next_row = row + 2
     next_col = col + 1
     if solve(board, board_size, next_row, next_col, counter + 1):
-        return True  
-    board[row][col] = 0
-    return False 
+        board[next_row][next_col] = counter
 
     next_row = row + 2
     next_col = col - 1
-    if solve(board, board_size, next_row, next_col, counter + 1):
-        return True  
-    board[row][col] = 0
-    return False 
+    if solve(board, board_size, next_row, next_col, counter + 1): 
+        board[next_row][next_col] = counter
 
     next_row = row - 2
     next_col = col + 1
-    if solve(board, board_size, next_row, next_col, counter + 1):
-        return True  
-    board[row][col] = 0
-    return False 
+    if solve(board, board_size, next_row, next_col, counter + 1): 
+        board[next_row][next_col] = counter
 
     next_row = row - 2
     next_col = col - 1
     if solve(board, board_size, next_row, next_col, counter + 1):
-        return True  
-    board[row][col] = 0
-    return False 
+        board[next_row][next_col] = counter
 
     next_row = row + 1
     next_col = col + 2
-    if solve(board, board_size, next_row, next_col, counter + 1):
-        return True  
-    board[row][col] = 0
-    return False 
+    if solve(board, board_size, next_row, next_col, counter + 1): 
+        board[next_row][next_col] = counter
 
     next_row = row + 1
     next_col = col - 2
     if solve(board, board_size, next_row, next_col, counter + 1):
-        return True  
-    board[row][col] = 0
-    return False    
+        board[next_row][next_col] = counter
 
     next_row = row - 1
     next_col = col + 2
     if solve(board, board_size, next_row, next_col, counter + 1):
-        return True 
-    board[row][col] = 0
-    return False  
+        board[next_row][next_col] = counter
 
     next_row = row - 1
     next_col = col - 2
     if solve(board, board_size, next_row, next_col, counter + 1):
-        return True  
-    board[row][col] = 0
-    return False 
+        board[next_row][next_col] = counter
 
-    board[row][col] = 0
-    return False 
-
+    return False
 
 def make_board(board_size):
     new_board = []
@@ -94,15 +71,12 @@ def make_board(board_size):
         for n in range(0,board_size):
             new_row.append(0)
         new_board.append(new_row)
-    # new_board[0][0] = 1
     return new_board
 
 
 def print_board(board):
     for i in range(0,len(board)):
-            print(board[i])
-
-
+        print(board[i])
 
 b_size = input("Input the size of the board: ")
 b_size = int(b_size)
