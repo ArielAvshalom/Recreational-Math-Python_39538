@@ -26,7 +26,11 @@ def Segment(n):
         check = [True] * (upperLimit - lowerLimit + 1)
         for i in primes:
             multiple = int((lowerLimit / i) // 1) * i
-            for j in range(multiple, upperLimit, i):
+            if multiple < lowerLimit:
+                multiple += i
+            if multiple > i * i:
+                startVal = multiple
+            for j in range(startVal, upperLimit, i):
                 check[j - lowerLimit] = False
 
         for i in range(lowerLimit, upperLimit):
@@ -38,4 +42,4 @@ def Segment(n):
             upperLimit = n
 
 
-Segment(1000)
+Segment(100000)
