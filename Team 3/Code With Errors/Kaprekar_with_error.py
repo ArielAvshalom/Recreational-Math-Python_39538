@@ -53,3 +53,11 @@ if __name__ == '__main__':
         if len(str(num)) == 4 and not all_digits_same:
             break
     kaprekar_constant = generate_kaprekar(num, count=1)
+
+"""
+ERROR FOUND BY Serrin Doscher:
+    Leading 0's do not allow the code to run
+
+ERRORS FOUND BY Perla, Escano, Estrealla:
+    The code gets stuck in loop with leading 0's
+"""

@@ -15,15 +15,15 @@ If the single digit comes to be 1 then the number is a magic number.
 def Automorphic(number):
     square_num = number * number
     number_length = len(str(number))
-    last_digits = (str(square_num)[-number_length:])
+    last_digits = int(str(square_num)[-number_length:])
 
     if last_digits == number:
-        print(print(f'{number} squared is {square_num}\n'
+        (print(f'{number} squared is {square_num}\n'
               f'This is an Automorphic number\n'))
 
 
     else:
-        print(print(f'{number} squared is {square_num}\n'
+        (print(f'{number} squared is {square_num}\n'
               f'This is NOT an Automorphic number\n'))
 
     return 0
@@ -39,7 +39,7 @@ def MagicNum(number):
         return False
 
     while (number != 0):
-        digit_sum += int(number / 10)
+        digit_sum += int(number % 10)
         number = int(number // 10)
 
     print(*digits, sep=' + ', end=' = ')
@@ -55,16 +55,17 @@ if MagicNum(user_num):
 else:
     print(f'{user_num} is NOT a Magic Number')
 
+
 """
 ERRORS FOUND BY Fnu, Tsering
     The one I found is that the last_digits extracted from the number 
     is a string while number is integer so when comparing last_digits to number, 
     it always evaluates to false even if the number is same.
-
+    
     Wrong operator used. Used division instead of modulus operator to extract the digits
     of the number, which gives incorrect value for the sum of the digits.
      Fix: digit_sum += int(number % 10)
-
+     
     Too many print statements in 21 and 26
 ERRORS FOUND BY Perla, Escano, Estrealla
     #1 line 18: last_digits  should have an int casting  

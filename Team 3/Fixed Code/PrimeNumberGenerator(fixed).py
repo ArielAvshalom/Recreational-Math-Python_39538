@@ -11,7 +11,7 @@ The following code generates all the prime numbers up to the number the user den
 """
 n = int(input("Hi, I am a prime number generator!\n Up to what number would you like me to generate the primes? : "))
 
-for x in range(2, n):
+for x in range(2, n+1):
     is_prime = True
     for y in range(2, x):
         if x % y == 0:
@@ -20,9 +20,10 @@ for x in range(2, n):
     if is_prime:
         print(x)
 
+
 """
 ERROR FOUND BY Serrin Doscher
     Number inputted is not included in the output
     Fix: Line 14 change to for x in range(2, n+1)
-
+    
 """
