@@ -2,6 +2,8 @@
 Author: James Yoo
 Problem: Narcisstistic Number
 Find the implicit errors
+
+A number is a narcisstistic number if the sum of its own digits each raised to the power of the number of digits is equal to the number.
 """
 
 """
