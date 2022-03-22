@@ -1,5 +1,7 @@
+
 def generate_Kaprekar(end):
     # iterate
+    # BUG HERE THE LAST NUMBER IS NOT LOOKED AT WHATSOEVER
     for i in range(end - 1):
         # get the square
         sqr = i ** 2
@@ -11,6 +13,7 @@ def generate_Kaprekar(end):
 
         while length > 1:
             # split the squares into two halves
+            # BUG HERE : WE DONT WANT ODD NUMBER OF DIGITS FOR A SQUARE NUMBER
             left = int(digits[:split])
             right = int(digits[split:])
 
