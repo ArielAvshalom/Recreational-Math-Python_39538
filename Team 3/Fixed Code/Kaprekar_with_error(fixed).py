@@ -21,6 +21,7 @@ Kaprekar's Procedure:
 def generate_kaprekar(n, count=1):
     num_str = str(n)
 
+
     # Rearrange digits of n in ascending order
     digits_asc_list = sorted(num_str)
     num_in_asc = int("".join(digits_asc_list))
@@ -48,11 +49,12 @@ def generate_kaprekar(n, count=1):
 
 if __name__ == '__main__':
     while True:  # Keep prompting user for the number until the conditions are met
-        num = int(input("Enter a 4-digit number in which all digits are NOT identical: "))
+        num = (input("Enter a 4-digit number in which all digits are NOT identical: "))
         all_digits_same = all(digit == str(num)[0] for digit in str(num))  # returns True if all digits are same in num
         if len(str(num)) == 4 and not all_digits_same:
             break
     kaprekar_constant = generate_kaprekar(num, count=1)
+
 
 """
 ERROR FOUND BY Serrin Doscher:
