@@ -46,7 +46,7 @@ def is_narc(number):
     return False
 
 """
-This is a function to print out narcisstic numbers until a specified number
+This is a function to return an array of narcisstic numbers until a specified number
 
 param: expects a non negative integer
 return: returns an array of narcisstic numbers
