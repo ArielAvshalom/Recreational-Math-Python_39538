@@ -10,9 +10,14 @@ Submitted by Team 2:
 Our Recreational Math consist of:
 
 * []() Prime Numbers
+    * Prime numbers are whole numbers greater than 1, that have only two factors – 1 and the number itself.
+    * Prime numbers are divisible only by the number 1 or itself.   
 * []() Narcisstic Numbers
+    *  A number is a narcisstistic number if the sum of its own digits each raised to the power of the number of digits is equal to the number.
 * []() Perfect Numbers
+    * A positive integer that is equal to the sum of it's divisors, excluding the number itself.
 * []() Amicable Numbers 
+    * Amicable numbers are two different natural numbers related in such a way that the sum of the proper divisors of each is equal to the other number. 
 
 # User Stories
 
