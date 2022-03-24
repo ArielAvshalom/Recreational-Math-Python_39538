@@ -3,7 +3,7 @@
 Author: Neslie Fernandez
 Group: 2
 
-Perfect Number : FIX
+Perfect Number : FIXED
 
 A Perfect Number: 
     
@@ -20,25 +20,32 @@ A Perfect Number:
 # This function takes in an integer and returns a true or false value whether a integer is a Perfect Number or Not.
 def perfect_num(num): 
     """
-    This function checks whether a number is a perfect number
+    This function checks whether an input number is a perfect number
    
     Parameters: 
     ------------------------
     num : integer value 
     
-   Returns:
-   ------------------------
-   a boolean True or False value 
+    Returns:
+    ------------------------
+    prints a boolean True or False value 
     
     """
     
-    # We will store our values into a list 
+    # We will store our values that fits the divisor criteria based on the input num into this list 
     myList = []
     
-    # For loop starts ranging 
+    # For loop starts the range from 1 to the number. 
     for i in range(1,num):
-        # if the number is a perfect divisor of that index 
-        # We append it to the list 
+ 
+ 
+		# Fix : if num is a 0, return False right away 
+        if(num == 0):
+            return False
+        
+		# number divided by the index has a remainder of 0
+        # it is then considered a divisor 
+        # thus we add it to our list
         if(num % i == 0):
             myList.append(i)
             
@@ -58,10 +65,10 @@ def print_perfect_num():
     ------------------------
     None
     
-   Returns:
-   ------------------------
-   prints an integer 
-   perfect number from 0 to 10,000, this case it will be 6,28,496,8128
+    Returns:
+    ------------------------
+    prints integers that are considered a perfect number
+    from 0 to 10,000. This case it will be 6,28,496,8128
 
     """
     # out for loop will start a range from 0 to 10,001 (not include 10,001) 
@@ -70,6 +77,7 @@ def print_perfect_num():
         # we print out the index number
         # otherwise we ignore it
         # FIX 
+		# We add another condition in our if statement
         # 0 is not a perfect number therefore we do not include it. 
         if(i != 0 and perfect_num(i)):
             print(i)
@@ -83,4 +91,5 @@ def print_perfect_num():
 #print(perfect_num(8128))
 #print(perfect_num(3))
 #print(perfect_num(-28))
+#print(perfect_num(0))
 #print_perfect_num()
