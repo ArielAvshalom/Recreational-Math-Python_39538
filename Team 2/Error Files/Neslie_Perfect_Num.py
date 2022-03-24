@@ -84,3 +84,20 @@ def print_perfect_num():
 #print(perfect_num(-28))
 #print(perfect_num(0))
 #print_perfect_num()
+
+"""
+ERRORS FOUND with Perfect numbers code
+
+	The error can be found in the perfect_num and print_perfect_number function.
+	When looping through the numbers form 0 to 10,000, the error we pick up is that 0 is printed as a valid perfect number.
+	Error such as these can easily be overlooked if the user fails to read the definition of what is considered a Perfect number.
+	The integer 0 is not considered a perfect number because the definition of perfect number states that it's a positive integer.
+	
+	To fix this we will be including another requirement in our if statement, in order to make sure the for loop does not considered 0 as a perfect number.
+	We will need to modify the if statement:
+
+	For the perfect_num function
+		Inside the for loop we will include an if statement if(num == 0): return False
+	For the print_perfect_number function
+		if statement will be changed from if(perfect_num(i)) to if(i != 0 and perfect_num(i))
+"""
