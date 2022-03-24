@@ -9,8 +9,8 @@
 
 ## **Brang Mai**
 #### Topic: Perfect Numbers
-##### Definition #1: A perfect number is a positive integer that equals the sum of its divisors except itself.
-##### Definition #2: A perfect number is a positive integer that is half the sum of all its divisors including itself.
+##### Definition 1: A perfect number is a positive integer that equals the sum of its divisors except itself.
+##### Definition 2: A perfect number is a positive integer that is half the sum of all its divisors including itself.
 ##### Some perfect numbers: 6, 28, 496, 8128, 33550336, ....
 * Errors:
 The function, “is_perfect_number(test_num, method)”, returns true if the “test_num” argument is a perfect number, and returns false otherwise. The “method” argument is used to check a perfect number by the two definitions listed above. Checking perfect numbers by method 1 produces the correct answers. However, checking by method 2 does not give the correct ones.
