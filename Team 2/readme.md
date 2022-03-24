@@ -26,12 +26,12 @@ The following functionality is completed:
 
 ## Errors with Prime numbers code
 * Considers 1 a prime number; 
+  * By having 1 be a prime number, the algorithmn incorrectly determines a lot of other numbers to be non-prime.
   * Fixed by manually setting **1** to **false**.
-  * Segment function incorrectly starts at the wrong value when checking if the multiple of primes are the wrong values. 
-* Example:
-  * if prime[i] is **3** and our starting value was **31** then **37** would be consider not prime. 
+* Segment function incorrectly starts at the wrong value when checking if the multiple of primes are the wrong values:
+  * if prime[i] is **3** and our starting value is **31** then **37** would be consider not prime (37 would be labeled as a multiple).
   * This is hard error to find or fix because it is hard to identify minimum number we need to start at for each prime. 
-  * This is fixed with a if statement that calculates the correctly starting value for each prime
+  * This is fixed with a if statement that calculates the correctly starting value for each prime.
 
 ## Errors with Narcissistic numbers code
 * The error for the Narcissistic number code is that the code skipped the first two narcissistic numbers (0 and 1) from the loop. 
