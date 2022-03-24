@@ -1,3 +1,8 @@
+# Adeebur Rahman
+# Python program that prints all amicables up to 25000
+# Amicable numbers are two different natural numbers related in such a way that the sum of the proper divisors of each is equal to the other number
+# The smallest pair of amicable numbers is (220, 284)
+
 from functools import cache
 
 @cache
