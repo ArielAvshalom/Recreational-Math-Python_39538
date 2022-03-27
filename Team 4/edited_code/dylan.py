@@ -19,22 +19,30 @@ import math
 
 def get_divisors(num):
 	returnarray=[]
-	square_root=int(math.sqrt(num))
+
+    # Correction
+	for i in range(1, (num) + 1):
+		if (num % i) == 0 and i != num:
+			returnarray.append(i)
+
+	# square_root=int(math.sqrt(num))
 	
-	for i in range(square_root, 0, -1):
-		if num % i == 1:
-			returnarray+=[int(i),int(num/i)]
+	# for i in range(square_root, 0, -1):
+	# 	if num % i == 1:
+	# 		returnarray+=[int(i),int(num/i)]
 	
-	returnarray.append(1)
-	
+	# returnarray.append(1)
 	return returnarray
 
 
 def generate_perfect_numbers(amount):
-	for num in range(amount):
+	# Correction 
+	for num in range(1, amount):
 		if sum(get_divisors(num)) == num:
 			print(num)
 
 
 if __name__ == "__main__":
+
+	get_divisors(8)
 	generate_perfect_numbers(100)
