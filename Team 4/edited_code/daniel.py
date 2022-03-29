@@ -40,13 +40,14 @@ def sort(arr, size):
     dsize = size
     while dsize > 1:
         # BUG HERE : giving the wrong array size to the find_largest function
-        li = find_largest(arr, size)[1]
-        num = find_largest(arr, size)[0]
+        li = find_largest(arr, dsize)[1]
+        num = find_largest(arr, dsize)[0]
         print(num)
         if li != size - 1:
             arr = reverse(arr, li)
             moves_required += 1
-            arr = reverse(arr, size - 1)
+            # BUG HERE: also wrong array size passed
+            arr = reverse(arr, dsize - 1)
             moves_required += 1
         dsize -= 1
 
