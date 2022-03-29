@@ -12,6 +12,9 @@ def create_random_array():
     arr = random.randint(100, size=(max_len))
     return arr
 
+def get_length(arr):
+    return len(arr)
+
 def find_largest(arr, size):
     index = 0
     for i in range(size):
@@ -30,20 +33,22 @@ def reverse(arr, k):
         k -= 1
     return arr
 
-def sort(arr):
+def sort(arr, size):
     moves_required = 0
-    size = len(arr)
-    while size > 1:
-        # print(f"this is {size}")
-        li = find_largest(arr, size - 1)[1]
-        num = find_largest(arr, size - 1)[0]
+    # BUG HERE because we declare the size to be the full length of the array everytime, so we need to pass the size in the function itself
+    # size = len(arr)
+    dsize = size
+    while dsize > 1:
+        # BUG HERE : giving the wrong array size to the find_largest function
+        li = find_largest(arr, size)[1]
+        num = find_largest(arr, size)[0]
         print(num)
         if li != size - 1:
             arr = reverse(arr, li)
             moves_required += 1
             arr = reverse(arr, size - 1)
             moves_required += 1
-        size -= 1
+        dsize -= 1
 
     return arr, moves_required
 
@@ -52,7 +57,8 @@ def sort(arr):
 if __name__ == '__main__':
     ex = create_random_array()
     print(f"The array pre-sort: {ex}")
-    ex, moves = sort(ex)
+    len_ = len(ex)
+    ex, moves = sort(ex, len_)
     print(f"The array post-sort: {ex} with {moves} moves used")
     # ex = reverse(ex, 2)
     # print(ex)
