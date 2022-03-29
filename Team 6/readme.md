@@ -3,8 +3,8 @@
 
 ## Brang Mai
 #### Topic: Perfect Numbers
-##### Definition #1: A perfect number is a positive integer that equals the sum of its divisors except itself.
-##### Definition #2: A perfect number is a positive integer that is half the sum of all its divisors including itself.
+##### Definition 1: A perfect number is a positive integer that equals the sum of its divisors except itself.
+##### Definition 2: A perfect number is a positive integer that is half the sum of all its divisors including itself.
 Some perfect numbers: 6, 28, 496, 8128, 33550336
 
 * Errors:
