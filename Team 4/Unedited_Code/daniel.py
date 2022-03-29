@@ -30,17 +30,20 @@ def reverse(arr, k):
         k -= 1
     return arr
 
+# Need to pass the size of the array in the function otherwise recursion will not work
 def sort(arr):
     moves_required = 0
     size = len(arr)
     while size > 1:
         # print(f"this is {size}")
+        # BUG HERE because we declare the size to be the full length of the array everytime, so we need to pass the size in the function itself
         li = find_largest(arr, size - 1)[1]
         num = find_largest(arr, size - 1)[0]
         print(num)
         if li != size - 1:
             arr = reverse(arr, li)
             moves_required += 1
+            # BUG HERE: also wrong array size passed
             arr = reverse(arr, size - 1)
             moves_required += 1
         size -= 1

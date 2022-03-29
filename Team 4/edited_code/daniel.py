@@ -1,4 +1,13 @@
-# pancake flipping problem
+'''
+The Pancake Flipping Problem: 
+The goal is to get the largest number in the array at the end (bottom) using reversals only
+Unsorted: [5, 4, 3, 2, 1] -->  Sorted: [1, 2, 3, 4, 5]
+The simplest pancake sorting algorithm uses at most 2n -3 flips. 
+Similar to selection sort we bring the largest number to the top of the array with one flip.
+Then we take it to the end of the array with another flip.
+We continue to do this until the array is sorted.
+'''
+
 # The goal is to get the largest number in the array at the end (bottom)
 # so 1 2 3 4 5
 # using reversal only
@@ -18,11 +27,9 @@ def get_length(arr):
 def find_largest(arr, size):
     index = 0
     for i in range(size):
-        # print(f"the current i is {i}")
         if arr[i] > arr[index]:
             index = i
     max = arr[index]
-    # print(max)
     return max, index
 
 def reverse(arr, k):
@@ -41,8 +48,6 @@ def sort(arr, size):
     while dsize > 1:
         # BUG HERE : giving the wrong array size to the find_largest function
         li = find_largest(arr, dsize)[1]
-        num = find_largest(arr, dsize)[0]
-        print(num)
         if li != size - 1:
             arr = reverse(arr, li)
             moves_required += 1
