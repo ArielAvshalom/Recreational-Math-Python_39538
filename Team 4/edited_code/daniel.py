@@ -8,23 +8,34 @@ Then we take it to the end of the array with another flip.
 We continue to do this until the array is sorted.
 '''
 
-# The goal is to get the largest number in the array at the end (bottom)
-# so 1 2 3 4 5
-# using reversal only
-# The simplest pancake sorting algorithm performs at most 2n − 3 flips. In this algorithm, a kind of selection sort,
-# we bring the largest pancake not yet sorted to the top with one flip; take it down to its final position with one more flip; and repeat this process for the remaining pancakes.
 from numpy import random
 
 def create_random_array():
+    '''
+    Creates a random array of max size 20.
+    The array will have only values up to 100 ordered randomly.
+
+    @Args: None
+    
+    @Return: A random array of max size 20
+
+    '''
     max_num = 20
     max_len = random.randint(max_num)
     arr = random.randint(100, size=(max_len))
     return arr
 
-def get_length(arr):
-    return len(arr)
-
 def find_largest(arr, size):
+    '''
+    Finds the largest value in a given array
+
+    @Arg1: The array we'd like to find the largest value of
+    @Arg2: The specified size of the array or the size of the 
+    portion of the array you'd like to find the largest value of
+
+    @Return: The largest value in the array or splice of the array
+
+    '''
     index = 0
     for i in range(size):
         if arr[i] > arr[index]:
@@ -33,6 +44,15 @@ def find_largest(arr, size):
     return max, index
 
 def reverse(arr, k):
+    '''
+    Reverses the order of the values in the array from a specified splice.
+
+    @Arg1: The array that we will reverse the order of
+    @Arg2: The specified size of the array or the size of the 
+    portion of the array you'd like to reverse 
+
+    @Return: Reverse ordered array
+    '''
     a = 0
     while a < k :
         arr[a], arr[k] = arr[k], arr[a]
@@ -41,34 +61,51 @@ def reverse(arr, k):
     return arr
 
 def sort(arr, size):
+    '''
+    Sorts the array from smallest (beginning) to largest (end) in at most 2n - 3 flips
+    by checking whether the largest number is at the end of the array if its not then using
+    reversals only it moves the largest number to the beginning (Index position 0) and then using
+    another reversal it moves it to the end of the array,
+    repeating this with the array but with the size - 1 each time until its sorted
+    
+    Also keeps track of the number of moves
+
+    @Arg1: The array that we will sort
+    @Arg2: The size of the array
+
+    @Return1: The sorted array
+    @Return2: Moves Required to sort the array
+    '''
     moves_required = 0
-    # BUG HERE because we declare the size to be the full length of the array everytime, so we need to pass the size in the function itself
-    # size = len(arr)
     dsize = size
     while dsize > 1:
-        # BUG HERE : giving the wrong array size to the find_largest function
         li = find_largest(arr, dsize)[1]
         if li != size - 1:
             arr = reverse(arr, li)
             moves_required += 1
-            # BUG HERE: also wrong array size passed
             arr = reverse(arr, dsize - 1)
             moves_required += 1
         dsize -= 1
 
     return arr, moves_required
 
+def create_and_sort():
+    '''
+    Helper function that creates an array, sorts the array and 
+    displays the presorted array and sorted array. 
 
-
-if __name__ == '__main__':
+    @Args: None
+    @Return: None
+    '''
     ex = create_random_array()
     print(f"The array pre-sort: {ex}")
     len_ = len(ex)
     ex, moves = sort(ex, len_)
     print(f"The array post-sort: {ex} with {moves} moves used")
-    # ex = reverse(ex, 2)
-    # print(ex)
-    # print(find_largest(ex))
+
+if __name__ == '__main__':
+
+    create_and_sort()
 
 
 
