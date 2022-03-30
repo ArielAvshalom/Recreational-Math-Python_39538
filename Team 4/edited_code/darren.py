@@ -1,7 +1,14 @@
+'''
+Generating Kaprekar Numbers: 
+The goal is to generate Kaprekar Numbers from 1 to a user inputted number.
+generate_Kaprekar(300) -->  1, 9, 45, 55, 99, 297
+We iterate through all the numbers, square them, then check both halves.
+We print if the number is Kaprekar
+'''
+
 
 def generate_Kaprekar(end):
     # iterate
-    # BUG HERE THE LAST NUMBER IS NOT LOOKED AT WHATSOEVER
     for i in range(end):
         # get the square
         sqr = i ** 2
@@ -13,7 +20,6 @@ def generate_Kaprekar(end):
 
         while length % 2 == 0:
             # split the squares into two halves
-            # BUG HERE : WE DONT WANT ODD NUMBER OF DIGITS FOR A SQUARE NUMBER
             left = int(digits[:split])
             right = int(digits[split:])
 
