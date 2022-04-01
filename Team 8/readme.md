@@ -1,5 +1,4 @@
 # TEAM 8
-- Saiman Tamang
-- Emily Fang
-- Asad Rafique
-
+Saiman Tamang - perfect #
+Emily Fang - armstrong #
+Asad Rafique - prime #
