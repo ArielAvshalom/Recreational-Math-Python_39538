@@ -41,6 +41,12 @@ def prime_generator():
     to generate our new list. If we keep on repeating this procedure, we will eventually be left with a list
     of all prime numbers. 
     
+    IMPLICIT ERRORS:
+    1. appending two initally the factor arrays prevents it from being returned when the prime generator is called
+    and thus two is not returned as a prime
+
+    2. input is not checked for numeric values so when the input is not numeric and is converted to the int data type using the 
+    int() function, the program crashes
 
     ### Returns
     - generator
@@ -48,10 +54,6 @@ def prime_generator():
     """
     factors = []
     gen = natural_generator();
-    start = next(gen)
-
-    if start == 2:
-        factors.append(start)
 
     while True: 
         value = next(gen)
@@ -60,7 +62,13 @@ def prime_generator():
             yield value
 
 def main():
-    number_of_primes = int(input("How many primes would you like?: "))
+    
+    number_of_primes = ""
+    while True:
+        number_of_primes = input("How many primes would you like?: ")
+        if number_of_primes.isnumeric():
+            number_of_primes = int(number_of_primes)
+            break;
 
     #generates all the primes up to value specified in the user input
     gen = prime_generator()
