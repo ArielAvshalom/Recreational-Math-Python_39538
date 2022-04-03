@@ -1,3 +1,4 @@
+#Alan Y.
 def check_factors(num, factors):
     """
     check if the num is divisible by any of the numbers in the factors list
