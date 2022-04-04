@@ -10,7 +10,7 @@ The objective of this assignment was to select a recreational math problem, then
 - `prime_gen.py` - Main driver to parse arguments for prime number generator
 - `prime.py` - Contains the faulty methods of generating prime numbers, either by a range or number of digits
 - `solution.py` - The corrections made by the code reviewing group
-- `hab-solution.py` - The original implementation/solution by the coder
+- `hab_solution.py` - The original implementation/solution by the coder
 - `SOLUTIONS.md` - Explanation of the errors added to the program
 
 ## How to use
