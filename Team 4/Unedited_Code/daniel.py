@@ -15,11 +15,9 @@ def create_random_array():
 def find_largest(arr, size):
     index = 0
     for i in range(size):
-        # print(f"the current i is {i}")
         if arr[i] > arr[index]:
             index = i
     max = arr[index]
-    # print(max)
     return max, index
 
 def reverse(arr, k):
@@ -30,27 +28,38 @@ def reverse(arr, k):
         k -= 1
     return arr
 
-# Need to pass the size of the array in the function otherwise recursion will not work
+'''
+BUG HERE: Need to pass the size of the array in the function. We need to call reverse function multiple times with a decreasing array size.
+If we dont pass the size it becomes extremely difficult to monitor the size of the unsorted segment of the array.
+'''
 def sort(arr):
     moves_required = 0
     size = len(arr)
     while size > 1:
-        # print(f"this is {size}")
-        # BUG HERE because we declare the size to be the full length of the array everytime, so we need to pass the size in the function itself
+        '''
+        BUG HERE : We declare the size to be the full length of the array everytime, so we need to pass the size in the function itself
+        It isn't immediately obvious until you see that because we are using incorrect size of the array we are actually getting the wrong largest number 
+        in the splice of that array
+        In addition to making cutting the array short by 1 as well
+        ''' 
         li = find_largest(arr, size - 1)[1]
-        num = find_largest(arr, size - 1)[0]
-        print(num)
         if li != size - 1:
             arr = reverse(arr, li)
             moves_required += 1
-            # BUG HERE: also wrong array size passed
+            '''
+            BUG HERE : We declare the size to be the full length of the array everytime, so we need to pass the size in the function itself
+            It isn't immediately obvious until you see that because we are using incorrect size of the array we are actually getting the wrong largest number 
+            in the splice of that array
+            ''' 
             arr = reverse(arr, size - 1)
             moves_required += 1
         size -= 1
 
     return arr, moves_required
 
-
+'''
+We also added a function that creates an array and sorts using the other function for a clearer respresentation of what we are doing.
+'''
 
 if __name__ == '__main__':
     ex = create_random_array()
