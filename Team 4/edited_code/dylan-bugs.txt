@@ -1,0 +1,5 @@
+Bugs added:
+
+In get_divisors(), when finding divisors, checks for num % i == 1 instead of num % i == 0 
+
+In get_divisors(), wrong end point for range() 
