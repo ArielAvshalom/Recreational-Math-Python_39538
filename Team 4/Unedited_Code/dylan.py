@@ -18,6 +18,12 @@ The factors of 6 are 1, 2, 3, and 6
 import math
 
 def get_divisors(num):
+	"""
+	returns a list of divisors of the inputted number, num
+
+	input: number
+	output: list of divisors of that number
+	"""
 	returnarray=[]
 	square_root=int(math.sqrt(num))
 	
@@ -31,6 +37,13 @@ def get_divisors(num):
 
 
 def generate_perfect_numbers(amount):
+	"""
+	prints out perfect numbers from 0 to input amount.
+	generates divisors of each number, compares sum of divisors and number, prints if equal
+
+	input: number to generate perfect numbers up to 
+	output: prints perfect numbers in range 0 to input
+	"""
 	for num in range(amount):
 		if sum(get_divisors(num)) == num:
 			print(num)
