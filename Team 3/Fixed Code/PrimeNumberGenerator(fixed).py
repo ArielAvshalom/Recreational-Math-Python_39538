@@ -25,5 +25,12 @@ for x in range(2, n+1):
 ERROR FOUND BY Serrin Doscher
     Number inputted is not included in the output
     Fix: Line 14 change to for x in range(2, n+1)
+
+ERROR FOUND BY Fnu Tsering
+    Error: The value that user inputs is not checked to see it's prime or not, 
+    	   so if user input value is a prime number, it is not printed as one of the prime numbers.
+    	   
+	Fix: Add 1 to n in the outer for loop so that it also checks the input number to see if it's prime or not.
+
     
 """
