@@ -1,0 +1,7 @@
+Bugs added:
+
+In get_divisors(), when finding divisors, checks for num % i == 1 instead of num % i == 0 
+-this produces output, but wrong output, which is not immediately obvious unless you manually check the output.
+
+In get_divisors(), wrong end point for range()
+-this produces correct output for the get_divisors() function, but wrong output for the generate_perfect_numbers() function, since the get_divisors() function ends up including the input number itself.
