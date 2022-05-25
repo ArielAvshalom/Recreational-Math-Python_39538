@@ -33,7 +33,12 @@ def driver(*args, **kwargs):
     """)
     parser.add_argument("--solution", "-s", dest='solution', action="store_true", default=False,
                         help="""
-                        Will use the correct prime number generating functions without the intentional implicit errors
+                        Will use the review group's correction of the implicit errors
+                        Default: False
+                        """)
+    parser.add_argument("--original", "-o", dest='hab', action="store_true", default=False,
+                        help="""
+                        Will use the original code before errors were added
                         Default: False
                         """)
     group = parser.add_mutually_exclusive_group(required=True)
@@ -52,6 +57,8 @@ def driver(*args, **kwargs):
 
     if args.solution:
         from solution import range_1_n, digit_size
+    elif args.hab:
+        from hab_solution import range_1_n, digit_size
     else:
         from prime import range_1_n, digit_size
 
