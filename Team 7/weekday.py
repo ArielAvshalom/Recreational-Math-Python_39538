@@ -1,6 +1,6 @@
 
 '''
-Created on Mon Mar 21
+Created on Mon Mar 21 20:17
 @author: Lauren Galicia
 
 '''
@@ -29,7 +29,7 @@ def weekday(date):
     week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     century = int(year[:-2])
     year_code = sum([int(n) for n in [year[-2:], int(year[-2:])/4]]) % len(week)
-    year, month, day = [int(n) for n in [year, day, month]]
+    year, month, day = [int(n) for n in [year, month, day]]
     month -= 1
     month_code = '033614625035'[month]
     Gregorian = year > 1752
